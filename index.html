@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>frame animation</title>
+</head>
+<body>
+<div id="test"></div>
+<script src="libs/easeljs/easeljs-0.8.2.min.js"></script>
+<script src="test.js"></script>
+<script src="frame_animation.js"></script>
+<script>
+    var draw = new FrameAnimation('test.png', test_timeline, document.getElementById('test'));
+
+    createjs.Ticker.setFPS(25);
+    createjs.Ticker.addEventListener("tick", handleTick);
+    function handleTick(event) {
+        draw.run();
+    }
+</script>
+</body>
+</html>
